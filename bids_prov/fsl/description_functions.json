@@ -122,7 +122,7 @@
   },
   {
     "Name": "tsplot",
-    "Used": ["-i"],
+    "Used": ["-f", "-m"],
     "GeneratedBy": ["-o"]
   },
   {
