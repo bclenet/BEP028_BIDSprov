@@ -4,7 +4,7 @@
   "Records": {
     "Software": [
       {
-        "@id": "urn:c9c41032-a75b-4535-84cd-acb432b3d541",
+        "@id": "urn:b13a8837-4e83-4ffe-8583-44ad77c778bf",
         "RRID": "RRID:SCR_007037",
         "@type": "prov:SoftwareAgent",
         "Label": "AFNI",
@@ -13,32 +13,32 @@
     ],
     "Activities": [
       {
-        "@id": "urn:1a4cacfc-6c2f-4960-8b86-7bcda40db9b3",
+        "@id": "urn:eb232e1e-58ae-4077-b3ad-87d1feb35b6c",
         "Label": "",
-        "AssociatedWith": "urn:c9c41032-a75b-4535-84cd-acb432b3d541",
+        "AssociatedWith": "urn:b13a8837-4e83-4ffe-8583-44ad77c778bf",
         "Command": "3dpc -overwrite -mask ${dset_mask} -pcsave 5 -prefix ${dir_hyp}/PC_hyp${num} ${grp_dset}; ",
         "Used": [
-          "urn:4349b024-08f7-4723-831a-77a19b4c1144",
-          "urn:f40d24fd-8ee7-4822-b98b-3e889411760e"
+          "urn:cc379f28-99f7-4692-87e4-3b93193bcb89",
+          "urn:d8969622-62e2-4899-b5bc-b94a3a671e93"
         ]
       },
       {
-        "@id": "urn:51b6566c-ac9f-4514-a29a-2047f479b665",
+        "@id": "urn:8273d1cf-36af-4d5a-b308-a5d717a67b33",
         "Label": "block ...",
-        "AssociatedWith": "urn:c9c41032-a75b-4535-84cd-acb432b3d541",
+        "AssociatedWith": "urn:b13a8837-4e83-4ffe-8583-44ad77c778bf",
         "Command": "3dresample -overwrite -prefix tmp_REF_DSET.nii.gz -master ${dset_mask} -input \"${ref_dset}\"; 3dMatch -echo_edu -overwrite -mask ${dset_mask} -refset ${dir_hyp}/PC_hyp${num}+tlrc -inset tmp_REF_DSET.nii.gz -prefix tmp_MATCHED; 3dcalc -echo_edu -overwrite -a ${dir_hyp}/PC_hyp${num}+tlrc -expr \"${signum}*a\" -prefix ${dir_hyp}/PC_hyp${num}_sign0.nii.gz; ",
         "Used": [
-          "urn:05fbe4f8-2e63-4f9b-8d24-0b6839d69dc6",
-          "urn:f40d24fd-8ee7-4822-b98b-3e889411760e",
-          "urn:6fb270cb-246a-489a-9655-358899756167",
-          "urn:f40d24fd-8ee7-4822-b98b-3e889411760e",
-          "urn:6fb270cb-246a-489a-9655-358899756167"
+          "urn:330d4fc2-a9cb-4bec-a07d-d6330eba562c",
+          "urn:cc379f28-99f7-4692-87e4-3b93193bcb89",
+          "urn:9649d954-d3f8-4d7f-9749-43c44cfb4870",
+          "urn:cc379f28-99f7-4692-87e4-3b93193bcb89",
+          "urn:9649d954-d3f8-4d7f-9749-43c44cfb4870"
         ]
       }
     ],
     "Entities": [
       {
-        "@id": "urn:f40d24fd-8ee7-4822-b98b-3e889411760e",
+        "@id": "urn:cc379f28-99f7-4692-87e4-3b93193bcb89",
         "Label": "${dset_mask}",
         "AtLocation": "${dset_mask}",
         "digest": {
@@ -46,7 +46,7 @@
         }
       },
       {
-        "@id": "urn:4349b024-08f7-4723-831a-77a19b4c1144",
+        "@id": "urn:d8969622-62e2-4899-b5bc-b94a3a671e93",
         "Label": "${grp_dset}",
         "AtLocation": "${grp_dset}",
         "digest": {
@@ -54,16 +54,16 @@
         }
       },
       {
-        "@id": "urn:d7653c13-bc89-4e81-99a2-e4f6cc895c5b",
+        "@id": "urn:1a4cacfc-6c2f-4960-8b86-7bcda40db9b3",
         "Label": "PC_hyp${num}",
         "AtLocation": "${dir_hyp}/PC_hyp${num}",
-        "GeneratedBy": "urn:1a4cacfc-6c2f-4960-8b86-7bcda40db9b3",
+        "GeneratedBy": "urn:eb232e1e-58ae-4077-b3ad-87d1feb35b6c",
         "digest": {
           "sha256": "915832134c7f76c64fd48179b53dfb05de128b50ef451380b440cff2ec1990fb"
         }
       },
       {
-        "@id": "urn:f40d24fd-8ee7-4822-b98b-3e889411760e",
+        "@id": "urn:cc379f28-99f7-4692-87e4-3b93193bcb89",
         "Label": "${dset_mask}",
         "AtLocation": "${dset_mask}",
         "digest": {
@@ -71,7 +71,7 @@
         }
       },
       {
-        "@id": "urn:05fbe4f8-2e63-4f9b-8d24-0b6839d69dc6",
+        "@id": "urn:330d4fc2-a9cb-4bec-a07d-d6330eba562c",
         "Label": "\"${ref_dset}\"",
         "AtLocation": "\"${ref_dset}\"",
         "digest": {
@@ -79,7 +79,7 @@
         }
       },
       {
-        "@id": "urn:6fb270cb-246a-489a-9655-358899756167",
+        "@id": "urn:9649d954-d3f8-4d7f-9749-43c44cfb4870",
         "Label": "PC_hyp${num}",
         "AtLocation": "${dir_hyp}/PC_hyp${num}+tlrc",
         "digest": {
@@ -87,19 +87,19 @@
         }
       },
       {
-        "@id": "urn:b13a8837-4e83-4ffe-8583-44ad77c778bf",
+        "@id": "urn:6bb2f2da-6e50-4376-958c-d807ba9130f4",
         "Label": "tmp_MATCHED",
         "AtLocation": "tmp_MATCHED",
-        "GeneratedBy": "urn:51b6566c-ac9f-4514-a29a-2047f479b665",
+        "GeneratedBy": "urn:8273d1cf-36af-4d5a-b308-a5d717a67b33",
         "digest": {
           "sha256": "a251065c7203a21b76c1fb6acd1edb6da1c29896ad2df1f5479c71e16a29c302"
         }
       },
       {
-        "@id": "urn:d8969622-62e2-4899-b5bc-b94a3a671e93",
+        "@id": "urn:d351d30f-a4e9-40b2-9de0-e697ad8f4e22",
         "Label": "PC_hyp${num}_sign0.nii.gz",
         "AtLocation": "${dir_hyp}/PC_hyp${num}_sign0.nii.gz",
-        "GeneratedBy": "urn:51b6566c-ac9f-4514-a29a-2047f479b665",
+        "GeneratedBy": "urn:8273d1cf-36af-4d5a-b308-a5d717a67b33",
         "digest": {
           "sha256": "5f0818d820edebe892295ffc1dd6f69823f2fb843bc2c3b0b5304054fa227af0"
         }
