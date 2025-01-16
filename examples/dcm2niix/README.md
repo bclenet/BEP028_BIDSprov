@@ -56,6 +56,16 @@ tree sub-02/
 
 See the `dcm2niix.prov.jsonld` file.
 
-Some limitations :
-* for now, the values of Activities `Used` keys only refer to the first dicom file of a series, although each activity should be linked to all the data it actually used (i.e.: all dicom files in a directory in our case).
-* as there is a high number of dicom files (384 in `acq1/` and 5460 in `acq2/`), we did not create an entity for each of these. Only the first three files of each directory were represented.
+## Limitations
+
+### `Used` key for activities
+
+Although the BIDS-Prov spec mentions:
+
+> Used : OPTIONAL. UUID. Identifier of an entity used by this activity (the corresponding Entity must be defined with its own Entity record).
+
+We added entities as a list in to link all the dicom files of a directory to the corresponding conversion activity.
+
+### High number of dicom files
+
+As there is a high number of dicom files (384 in `acq1/` and 5460 in `acq2/`), we did not create an entity for each of these. Only the first three files of each directory were represented.
