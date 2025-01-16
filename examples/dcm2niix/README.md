@@ -64,7 +64,7 @@ Although the BIDS-Prov spec mentions:
 
 > Used : OPTIONAL. UUID. Identifier of an entity used by this activity (the corresponding Entity must be defined with its own Entity record).
 
-We added entities as a list in to link all the dicom files of a directory to the corresponding conversion activity.
+We represented used entities in a list to link all the dicom files of a directory to the corresponding conversion activity.
 
 ### High number of dicom files
 
