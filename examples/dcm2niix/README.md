@@ -73,3 +73,13 @@ We represented used entities in a list to link all the dicom files of a director
 ### High number of dicom files
 
 As there is a high number of dicom files (384 in `acq1/` and 5460 in `acq2/`), we did not create an entity for each of these. Only the first three files of each directory were represented.
+
+### `TaskName` not generated
+
+As specified in [this issue](https://github.com/rordenlab/dcm2niix/issues/148), `dcm2niix` is not able to propagate the value of `TaskName` (name of the task in the case of task-fMRI) automatically because this information is not in the dicom metadata.
+
+In our case, the following line must be added manually in the `sub-02_ses-20140425155335_task-oneback_run-1_bold.json` file:
+
+```json
+    "TaskName": "oneback",
+```
