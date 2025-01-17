@@ -54,7 +54,11 @@ tree sub-02/
 
 ## Associated provenance
 
-See the `dcm2niix.prov.jsonld` file.
+See the `dcm2niix.prov.jsonld` file that contains all provenance traces relative to the conversion steps.
+
+Two file level provenance files (`.prov.jsonld` sidecars) are also available, representing the provenance of the associated files:
+* sub-02_ses-20130717141500_T1w.prov.jsonld
+* sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld
 
 ## Limitations
 
