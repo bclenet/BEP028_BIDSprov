@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "bidsprov_context.json",
+    {
+      "Records_hirni-demo_environments": "Records"
+    }
+    ],
+  "BIDSProvVersion": "0.0.1",
+  "Records_hirni-demo_environments": {
+    "Environments": [
+      {
+        "Id": "fedora",
+        "Label": "Fedora release 36 (Thirty Six)",
+        "OperatingSystem": " GNU/Linux 6.2.15-100.fc36.x86_64"
+      }
+    ]
+  }
+}

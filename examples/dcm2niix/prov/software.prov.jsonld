@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "bidsprov_context.json",
+    {
+      "Records_hirni-demo_software": "Records"
+    }
+    ],
+  "BIDSProvVersion": "0.0.1",
+  "Records_hirni-demo_software": {
+    "Software": [
+      {
+        "Id": "dcm2niix-4a586b50",
+        "Label": "dcm2niix",
+        "Version": "v1.0.20220720"
+      },
+      {
+        "Id": "fmriprep-4a586b50",
+        "Label": "fmriprep",
+        "Version": "v1.0.20220720"
+      }
+    ]
+  }
+}

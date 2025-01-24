@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "../../../prov/bidsprov_context.json",
+    {
+      "@base": "../../../prov/",
+      "Records_sub-02_ses-20130717141500_T1w": "Records"
+    }
+  ],
+  "BIDSProvVersion": "0.0.1",
+  "Records_sub-02_ses-20130717141500_T1w": {
+    "Activities": [
+      {
+        "Id": "urn:conversion-00f3a18f",
+        "Label": "Conversion",
+        "Command": "dcm2niix -o . -f sub-%i/ses-%t/anat/sub-%i_ses-%t_T1w sourcedata/acq1/dicoms/example-dicom-structural-master/dicoms/",
+        "AssociatedWith": "dcm2niix-4a586b50",
+        "Used": [
+          "fedora",
+          "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0001.dcm",
+          "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0002.dcm",
+          "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0003.dcm"
+        ]
+      }
+    ],
+    "Entities": [
+      {
+        "Id": "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0001.dcm",
+        "Label": "N2D_0001.dcm"
+      },
+      {
+        "Id": "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0002.dcm",
+        "Label": "N2D_0002.dcm"
+      },
+      {
+        "Id": "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0003.dcm",
+        "Label": "N2D_0003.dcm"
+      },
+      {
+        "Id": "bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.nii",
+        "Label": "sub-02_ses-20130717141500_T1w.nii",
+        "GeneratedBy": "urn:conversion-00f3a18f"
+      },
+      {
+        "Id": "bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.json",
+        "Label": "sub-02_ses-20130717141500_T1w.json",
+        "GeneratedBy": "urn:conversion-00f3a18f"
+      }
+    ]
+  }
+}
