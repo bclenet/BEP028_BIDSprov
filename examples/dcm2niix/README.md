@@ -55,4 +55,4 @@ Furthermore, all the triplets describing the type of node objects are missing be
 
 As a workaround, replaced the incorrect lines (50 to the end) by triplets describing the type of the objects in the merged document, as presented in `prov/experiment_1/merged_provenance_2.ttl`.
 From that we were able to plot the following graph `prov/experiment_1/merged_provenance_2.ttl`.
-![](/examples/dcm2niix/prov/experiment_1/merged_provenance_2.ttl)
+![](/examples/dcm2niix/prov/experiment_1/merged_provenance_2.png)
