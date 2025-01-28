@@ -66,7 +66,15 @@ python code/plot_graph.py -i prov/experiment_1/merged_provenance_2.ttl -o prov/e
 
 ![](/examples/dcm2niix/prov/experiment_1/merged_provenance_2.png)
 
-### Limitation #2: `bids` namespace for files
+### Limitation #2: the `@graph` term
+
+In the original BIDSProv context, we define the term `Records` that refers to `@graph` while setting up type indexing.
+
+Probably due to the fact that rdflib 7.1.3 does not conform with JSON-LD 1.1, parsing several JSON-LD files each one containing a `Records` would fail: it sets `Records` with the last parsed content, not a union of all containers as it should be.
+
+Therefore, we sticked to using the `@graph` term, in a local context `prov/bidsprov_context.json`.
+
+### Limitation #3: `bids` namespace for files
 
 Defining the `@base` term in the context (see `sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.json` line 5) allows give a default base IRI to relative IRIs.
 
