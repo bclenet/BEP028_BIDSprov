@@ -14,7 +14,7 @@ datalad install --recursive https://github.com/psychoinformatics-de/hirni-demo.g
 
 ## Experiment #1
 
-We describe the provenance records inside the following files:
+The aim of the experiment is to describe the provenance records inside several files. Here we use sidecars and modality agnostic files inside the `prov/` directory, as follows:
 ```
 .
 ├── prov
