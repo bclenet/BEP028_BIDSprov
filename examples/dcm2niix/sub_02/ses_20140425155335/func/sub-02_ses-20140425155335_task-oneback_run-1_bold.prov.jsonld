@@ -2,12 +2,11 @@
   "@context": [
     "../../../prov/bidsprov_context.json",
     {
-      "@base": "../../../prov/",
-      "Records_sub-02_ses-20140425155335_task-oneback_run-1_bold": "Records"
+      "@base": "../../../prov/"
     }
   ],
   "BIDSProvVersion": "0.0.1",
-  "Records_sub-02_ses-20140425155335_task-oneback_run-1_bold": {
+  "@graph": {
     "Activities": [
       {
         "Id": "urn:conversion-5a66f5be",

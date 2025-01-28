@@ -2,12 +2,11 @@
   "@context": [
     "../../../prov/bidsprov_context.json",
     {
-      "@base": "../../../prov/",
-      "Records_sub-02_ses-20130717141500_T1w": "Records"
+      "@base": "../../../prov/"
     }
   ],
   "BIDSProvVersion": "0.0.1",
-  "Records_sub-02_ses-20130717141500_T1w": {
+  "@graph": {
     "Activities": [
       {
         "Id": "urn:conversion-00f3a18f",

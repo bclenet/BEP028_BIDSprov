@@ -1,12 +1,9 @@
 {
   "@context": [
-    "bidsprov_context.json",
-    {
-      "Records_hirni-demo_software": "Records"
-    }
+    "bidsprov_context.json"
     ],
   "BIDSProvVersion": "0.0.1",
-  "Records_hirni-demo_software": {
+  "@graph": {
     "Software": [
       {
         "Id": "dcm2niix-4a586b50",

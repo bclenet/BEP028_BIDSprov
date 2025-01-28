@@ -1,12 +1,9 @@
 {
   "@context": [
-    "bidsprov_context.json",
-    {
-      "Records_hirni-demo_environments": "Records"
-    }
+    "bidsprov_context.json"
     ],
   "BIDSProvVersion": "0.0.1",
-  "Records_hirni-demo_environments": {
+  "@graph": {
     "Environments": [
       {
         "Id": "fedora",
