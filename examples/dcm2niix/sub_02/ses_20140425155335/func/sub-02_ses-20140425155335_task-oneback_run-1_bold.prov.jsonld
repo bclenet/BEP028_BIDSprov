@@ -6,28 +6,18 @@
       {
         "Id": "urn:conversion-5a66f5be",
         "Label": "Conversion",
-        "Command": "dcm2niix -o . -f sub-%i/ses-%t/func/sub-%i_ses-%t_task-oneback_run-1_bold sourcedata/acq1/dicoms/example-dicom-structural-master/dicoms/",
+        "Command": "dcm2niix -o . -f sub-%i/ses-%t/func/sub-%i_ses-%t_task-oneback_run-1_bold sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms",
         "AssociatedWith": "bids::prov/dcm2niix",
         "Used": [
           "bids::prov/fedora",
-          "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042547586",
-          "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042548588",
-          "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042551590"
+          "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms"
         ]
       }
     ],
     "Entities": [
       {
-        "Id": "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042547586",
-        "Label": "MR.1.3.46.670589.11.38317.5.0.4476.2014042516042547586"
-      },
-      {
-        "Id": "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042548588",
-        "Label": "MR.1.3.46.670589.11.38317.5.0.4476.2014042516042548588"
-      },
-      {
-        "Id": "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042551590",
-        "Label": "MR.1.3.46.670589.11.38317.5.0.4476.2014042516042551590"
+        "Id": "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms",
+        "Label": "Functional MRI DICOMs"
       },
       {
         "Id": "bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.nii",

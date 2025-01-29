@@ -20,7 +20,7 @@ for prov_file in prov_files:
 	with open(prov_file, encoding = 'utf-8') as file:
 		rdf_graph += f'# {prov_file}\n'
 		rdf_graph += jsonld.normalize(
-			jsonld.flatten(data), {'algorithm': 'URDNA2015', 'format': 'application/n-quads'})
+			jsonld.flatten(json.load(file)), {'algorithm': 'URDNA2015', 'format': 'application/n-quads'})
 		rdf_graph += '\n'
 
 # Write RDF graph

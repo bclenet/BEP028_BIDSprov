@@ -59,4 +59,8 @@ In this example, we rely on the fact that nodes defined in the `prov/*.prov.json
 
 The `bids::prov/fedora` node defined in `prov/environments.prov.jsonld` (see grey node in the above graph plot) is not recognized as a `prov:Entity` as the current context (commit [ce0eb77](https://github.com/bids-standard/BEP028_BIDSprov/commit/ce0eb774abd9527e594bd69212a87d5047864678)) does not define the `Environments` term.
 
-We cannot list all the 
+Listing all the DICOM files used by the dcm2niix conversion steps would lower readability of the JSON-LD provenance files. Therefore we only listed the following directories as `Entities`:
+* `bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/`
+* `bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/`
+
+although it is not allowed by the current version of the BIDS Prov specification to have directories as `Entities`.
