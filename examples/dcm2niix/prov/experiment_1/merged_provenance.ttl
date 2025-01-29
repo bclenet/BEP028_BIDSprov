@@ -1,43 +1,52 @@
-<bids::prov/dcm2niix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+# prov/software.prov.jsonld
 <bids::prov/dcm2niix> <http://www.w3.org/2000/01/rdf-schema#label> "dcm2niix" .
-<bids::prov/fmriprep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
 <bids::prov/fmriprep> <http://www.w3.org/2000/01/rdf-schema#label> "fmriprep" .
+_:c14n0 <http://www.w3.org/ns/prov#Agent> <bids::prov/dcm2niix> .
+_:c14n0 <http://www.w3.org/ns/prov#Agent> <bids::prov/fmriprep> .
+
+# prov/environments.prov.jsonld
 <bids::prov/fedora> <http://www.w3.org/2000/01/rdf-schema#label> "Fedora release 36 (Thirty Six)" .
-<bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0001.dcm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::prov/fedora> .
+
+# sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.jsonld
 <bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0001.dcm> <http://www.w3.org/2000/01/rdf-schema#label> "N2D_0001.dcm" .
-<bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0002.dcm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0002.dcm> <http://www.w3.org/2000/01/rdf-schema#label> "N2D_0002.dcm" .
-<bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0003.dcm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0003.dcm> <http://www.w3.org/2000/01/rdf-schema#label> "N2D_0003.dcm" .
-<bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.json> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.json> <http://www.w3.org/2000/01/rdf-schema#label> "sub-02_ses-20130717141500_T1w.json" .
 <bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.json> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:conversion-00f3a18f> .
-<bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.nii> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.nii> <http://www.w3.org/2000/01/rdf-schema#label> "sub-02_ses-20130717141500_T1w.nii" .
 <bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.nii> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:conversion-00f3a18f> .
-<urn:conversion-00f3a18f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
 <urn:conversion-00f3a18f> <http://www.w3.org/2000/01/rdf-schema#label> "Conversion" .
 <urn:conversion-00f3a18f> <http://www.w3.org/ns/prov#used> <bids::prov/fedora> .
 <urn:conversion-00f3a18f> <http://www.w3.org/ns/prov#used> <bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0001.dcm> .
 <urn:conversion-00f3a18f> <http://www.w3.org/ns/prov#used> <bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0002.dcm> .
 <urn:conversion-00f3a18f> <http://www.w3.org/ns/prov#used> <bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0003.dcm> .
 <urn:conversion-00f3a18f> <http://www.w3.org/ns/prov#wasAssociatedWith> <bids::prov/dcm2niix> .
-<bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042547586> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+_:c14n0 <http://www.w3.org/ns/prov#Activity> <urn:conversion-00f3a18f> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0001.dcm> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0002.dcm> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0003.dcm> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.json> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.nii> .
+
+# sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld
 <bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042547586> <http://www.w3.org/2000/01/rdf-schema#label> "MR.1.3.46.670589.11.38317.5.0.4476.2014042516042547586" .
-<bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042548588> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042548588> <http://www.w3.org/2000/01/rdf-schema#label> "MR.1.3.46.670589.11.38317.5.0.4476.2014042516042548588" .
-<bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042551590> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042551590> <http://www.w3.org/2000/01/rdf-schema#label> "MR.1.3.46.670589.11.38317.5.0.4476.2014042516042551590" .
-<bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.json> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.json> <http://www.w3.org/2000/01/rdf-schema#label> "sub-02_ses-20140425155335_task-oneback_run-1_bold.json" .
 <bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.json> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:conversion-5a66f5be> .
-<bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.nii> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.nii> <http://www.w3.org/2000/01/rdf-schema#label> "sub-02_ses-20140425155335_task-oneback_run-1_bold.nii" .
 <bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.nii> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:conversion-5a66f5be> .
-<urn:conversion-5a66f5be> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
 <urn:conversion-5a66f5be> <http://www.w3.org/2000/01/rdf-schema#label> "Conversion" .
 <urn:conversion-5a66f5be> <http://www.w3.org/ns/prov#used> <bids::prov/fedora> .
 <urn:conversion-5a66f5be> <http://www.w3.org/ns/prov#used> <bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042547586> .
 <urn:conversion-5a66f5be> <http://www.w3.org/ns/prov#used> <bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042548588> .
 <urn:conversion-5a66f5be> <http://www.w3.org/ns/prov#used> <bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042551590> .
 <urn:conversion-5a66f5be> <http://www.w3.org/ns/prov#wasAssociatedWith> <bids::prov/dcm2niix> .
+_:c14n0 <http://www.w3.org/ns/prov#Activity> <urn:conversion-5a66f5be> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042547586> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042548588> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms/MR.1.3.46.670589.11.38317.5.0.4476.2014042516042551590> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.json> .
+_:c14n0 <http://www.w3.org/ns/prov#Entity> <bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.nii> .
+

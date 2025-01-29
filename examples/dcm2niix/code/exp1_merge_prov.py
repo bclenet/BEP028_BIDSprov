@@ -4,7 +4,7 @@ from rdflib import Graph
 from pyld import jsonld
 
 prov_files = [
-	'prov/common.prov.jsonld',
+	#'prov/common.prov.jsonld',
 	'prov/software.prov.jsonld',
 	'prov/environments.prov.jsonld',
 	'sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.jsonld',
@@ -19,11 +19,13 @@ for prov_file in prov_files:
 	with open(prov_file, encoding = 'utf-8') as file:
 		#expanded = json.dumps(jsonld.flatten(jsonld.expand(json.load(file)), ctx = context, options = {'processingMode': 'json-ld-1.1'}), indent = 2)
 		#print(expanded)
+		rdf_graph += f'# {prov_file}\n'
 		rdf_graph += jsonld.normalize(
 			json.load(file), {'algorithm': 'URDNA2015', 'format': 'application/n-quads'})
-		print(rdf_graph)
-		#graph.parse(data = expanded, format = 'json-ld')
+		rdf_graph += '\n'
 
+		#graph.parse(data = expanded, format = 'json-ld')
+print(rdf_graph)
 
 
 """

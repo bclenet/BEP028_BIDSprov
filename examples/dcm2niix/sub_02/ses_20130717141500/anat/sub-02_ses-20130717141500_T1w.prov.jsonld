@@ -1,5 +1,5 @@
 {
-  "@context": "https://purl.org/nidash/bidsprov/context.json",
+  "@context": "https://raw.githubusercontent.com/bclenet/BEP028_BIDSprov/refs/heads/context/context.json",
   "Records": {
     "Activities": [
       {
