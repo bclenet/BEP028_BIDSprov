@@ -81,6 +81,11 @@ python ../../bids_prov/visualize.py --input_file sub_02/ses_20140425155335/func/
 
 ## Limitations
 
+### Using the JSON-LD playground
+
+These example files can be tested inside the [JSON-LD playground](https://json-ld.org/playground/), although the context IRI must be changed to:
+`https://raw.githubusercontent.com/bids-standard/BEP028_BIDSprov/master/context.json`
+
 ### `Used` key for activities
 
 Although the BIDS-Prov spec mentions:
