@@ -60,6 +60,8 @@ Two file level provenance files (`.prov.jsonld` sidecars) are also available, re
 * `sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.jsonld`
 * `sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld`
 
+Note that these files are independant and self-sufficient, although they describe the same provenance traces.
+
 We are able to visualize these provenance files using the following commands (current directory is `examples/dcm2niix/`):
 
 ```shell
