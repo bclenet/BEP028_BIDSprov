@@ -52,7 +52,6 @@ python code/plot_graph.py -i prov/experiment_1/merged_provenance_2.ttl -o prov/e
 
 In this example, we rely on the fact that nodes defined in the `prov/*.prov.jsonld` files have `bids::prov/` as base IRIs. Here are the involved nodes:
 * `bids::prov/dcm2niix`
-* `bids::prov/fmriprep`
 * `bids::prov/fedora`
 
 ### Limitations

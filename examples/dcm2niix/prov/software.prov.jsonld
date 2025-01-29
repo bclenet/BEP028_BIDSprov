@@ -7,11 +7,6 @@
         "Id": "bids::prov/dcm2niix",
         "Label": "dcm2niix",
         "Version": "v1.0.20220720"
-      },
-      {
-        "Id": "bids::prov/fmriprep",
-        "Label": "fmriprep",
-        "Version": "v1.0.20220720"
       }
     ]
   }

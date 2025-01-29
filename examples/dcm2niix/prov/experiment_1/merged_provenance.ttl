@@ -1,8 +1,6 @@
 # prov/software.prov.jsonld
 <bids::prov/dcm2niix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
 <bids::prov/dcm2niix> <http://www.w3.org/2000/01/rdf-schema#label> "dcm2niix" .
-<bids::prov/fmriprep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
-<bids::prov/fmriprep> <http://www.w3.org/2000/01/rdf-schema#label> "fmriprep" .
 
 # prov/environments.prov.jsonld
 <bids::prov/fedora> <http://www.w3.org/2000/01/rdf-schema#label> "Fedora release 36 (Thirty Six)" .
