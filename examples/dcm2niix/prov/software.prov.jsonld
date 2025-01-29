@@ -1,17 +1,14 @@
 {
-  "@context": [
-    "bidsprov_context.json"
-    ],
-  "BIDSProvVersion": "0.0.1",
-  "@graph": {
+  "@context": "https://purl.org/nidash/bidsprov/context.json",
+  "Records": {
     "Software": [
       {
-        "Id": "dcm2niix-4a586b50",
+        "Id": "bids::prov/dcm2niix",
         "Label": "dcm2niix",
         "Version": "v1.0.20220720"
       },
       {
-        "Id": "fmriprep-4a586b50",
+        "Id": "bids::prov/fmriprep",
         "Label": "fmriprep",
         "Version": "v1.0.20220720"
       }

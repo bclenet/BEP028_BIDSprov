@@ -1,12 +1,9 @@
 {
-  "@context": [
-    "bidsprov_context.json"
-    ],
-  "BIDSProvVersion": "0.0.1",
-  "@graph": {
+  "@context": "https://purl.org/nidash/bidsprov/context.json",
+  "Records": {
     "Environments": [
       {
-        "Id": "fedora",
+        "Id": "bids::prov/fedora",
         "Label": "Fedora release 36 (Thirty Six)",
         "OperatingSystem": " GNU/Linux 6.2.15-100.fc36.x86_64"
       }

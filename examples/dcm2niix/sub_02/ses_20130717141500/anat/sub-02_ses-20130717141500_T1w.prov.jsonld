@@ -1,20 +1,14 @@
 {
-  "@context": [
-    "../../../prov/bidsprov_context.json",
-    {
-      "@base": "../../../prov/"
-    }
-  ],
-  "BIDSProvVersion": "0.0.1",
-  "@graph": {
+  "@context": "https://purl.org/nidash/bidsprov/context.json",
+  "Records": {
     "Activities": [
       {
         "Id": "urn:conversion-00f3a18f",
         "Label": "Conversion",
         "Command": "dcm2niix -o . -f sub-%i/ses-%t/anat/sub-%i_ses-%t_T1w sourcedata/acq1/dicoms/example-dicom-structural-master/dicoms/",
-        "AssociatedWith": "dcm2niix-4a586b50",
+        "AssociatedWith": "bids::prov/dcm2niix",
         "Used": [
-          "fedora",
+          "bids::prov/fedora",
           "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0001.dcm",
           "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0002.dcm",
           "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms/N2D_0003.dcm"
