@@ -13,12 +13,14 @@ datalad install --recursive https://github.com/psychoinformatics-de/hirni-demo.g
 
 ## Experiment #1
 
-The aim of the experiment is to describe the provenance records inside several files. Here we use sidecars and modality agnostic files inside the `prov/` directory, as follows:
+The aim of the experiment is to describe the provenance records inside several files.
+Here we use sidecars and modality agnostic files inside the `prov/` directory, as follows:
 ```
 .
 ├── prov
-│   ├── environments.prov.jsonld
-│   └── software.prov.jsonld
+│   ├── prov-dcm2niix_.prov.json
+│   ├── prov-dcm2niix_env.prov.json
+│   └── prov-dcm2niix_soft.prov.json
 └── sub_02
     ├── ses_20130717141500
     │   └── anat
@@ -27,6 +29,16 @@ The aim of the experiment is to describe the provenance records inside several f
         └── func
             └── sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld
 ```
+
+We introduce the following BIDS suffixes that are currently not existing:
+* `soft`:
+* `env`:
+
+We introduce the following BIDS entity that is currently not existing:
+* `prov`
+    * Full name: Provenance traces
+    * Format: `prov-<label>`
+    * Definition: A grouping of provenance traces. Defining multiple provenance traces groups is appropriate when several processings have been performed on data.
 
 * `sub-02_ses-20130717141500_T1w.prov.jsonld` and `sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld` are sidecars defining provenance for the corresponding `.nii` files.
 * `environments.prov.jsonld` mutualises the declaration of software environments objects for lower level prov files
