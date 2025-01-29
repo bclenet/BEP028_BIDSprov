@@ -1,10 +1,7 @@
 {
     "@context": {
         "@version": 1.1, 
-        "Records": {
-          "@container": "@type", 
-          "@id": "@graph"
-        }, 
+        "Records": "@graph",
         "prov" : "http://www.w3.org/ns/prov#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "RRID": "http://scicrunch.org/resolver/",     
@@ -39,11 +36,24 @@
           "@id": "prov:used",
           "@type": "@id"
         },
-        "Entities": "prov:Entity",
+        "Entities": {
+          "@id": "prov:Entity",
+          "@container": ["@type", "@set"]
+        },
         "Entity": "prov:Entity",
-        "Activities": "prov:Activity",
+        "Activities": {
+          "@id": "prov:Activity",
+          "@container": ["@type", "@set"]
+        },
         "Activity": "prov:Activity",
-        "Software": "prov:Agent",
+        "Software": {
+          "@id": "prov:Agent",
+          "@container": ["@type", "@set"]
+        },        
+        "Environments": {
+          "@id": "prov:Entity",
+          "@container": ["@type", "@set"]
+        },
         "Atlocation": "prov:atLocation"
     }
 }
