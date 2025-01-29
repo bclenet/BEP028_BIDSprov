@@ -38,21 +38,21 @@
         },
         "Entities": {
           "@id": "prov:Entity",
-          "@container": ["@type", "@set"]
+          "@container": "@type"
         },
         "Entity": "prov:Entity",
         "Activities": {
           "@id": "prov:Activity",
-          "@container": ["@type", "@set"]
+          "@container": "@type"
         },
         "Activity": "prov:Activity",
         "Software": {
           "@id": "prov:Agent",
-          "@container": ["@type", "@set"]
+          "@container": "@type"
         },        
         "Environments": {
           "@id": "prov:Entity",
-          "@container": ["@type", "@set"]
+          "@container": "@type"
         },
         "Atlocation": "prov:atLocation"
     }
