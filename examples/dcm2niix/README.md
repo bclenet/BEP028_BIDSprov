@@ -57,8 +57,25 @@ tree sub-02/
 See the `dcm2niix.prov.jsonld` file that contains all provenance traces relative to the conversion steps.
 
 Two file level provenance files (`.prov.jsonld` sidecars) are also available, representing the provenance of the associated files:
-* sub-02_ses-20130717141500_T1w.prov.jsonld
-* sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld
+* `sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.jsonld`
+* `sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld`
+
+We are able to visualize these provenance files using the following commands (current directory is `examples/dcm2niix/`):
+
+```shell
+python ../../bids_prov/visualize.py --input_file prov/dcm2niix.prov.jsonld --output_file prov/dcm2niix.prov.png
+```
+![](examples/dcm2niix/prov/dcm2niix.prov.png)
+
+```shell
+python ../../bids_prov/visualize.py --input_file sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.jsonld --output_file sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.png
+```
+![](examples/dcm2niix/sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.png)
+
+```shell
+python ../../bids_prov/visualize.py --input_file sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld --output_file sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.png
+```
+![](examples/dcm2niix/sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.png)
 
 ## Limitations
 
