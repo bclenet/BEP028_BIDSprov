@@ -54,37 +54,21 @@ tree sub-02/
 
 ## Associated provenance
 
-See the `dcm2niix.prov.jsonld` file that contains all provenance traces relative to the conversion steps.
-
-Two file level provenance files (`.prov.jsonld` sidecars) are also available, representing the provenance of the associated files:
-* `sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.jsonld`
-* `sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld`
-
-Note that these files are independant and self-sufficient, although they describe the same provenance traces. To be more specific: `dcm2niix.prov.jsonld` contains all information described by the two sidecar files.
+The `prov/dcm2niix.prov.jsonld` file contains all provenance traces relative to the conversion steps.
 
 We are able to visualize these provenance files using the following commands (current directory is `examples/dcm2niix/`):
 
 ```shell
+pip install -r ../../requirements.txt
 python ../../bids_prov/visualize.py --input_file prov/dcm2niix.prov.jsonld --output_file prov/dcm2niix.prov.png
 ```
 ![](/examples/dcm2niix/prov/dcm2niix.prov.png)
-
-```shell
-python ../../bids_prov/visualize.py --input_file sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.jsonld --output_file sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.png
-```
-![](/examples/dcm2niix/sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.png)
-
-```shell
-python ../../bids_prov/visualize.py --input_file sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld --output_file sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.png
-```
-![](/examples/dcm2niix/sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.png)
 
 ## Limitations
 
 ### Using the JSON-LD playground
 
-These example files can be tested inside the [JSON-LD playground](https://json-ld.org/playground/), although the context IRI must be changed to:
-`https://raw.githubusercontent.com/bids-standard/BEP028_BIDSprov/master/context.json`
+The `prov/dcm2niix.prov.jsonld` file can be tested inside the [JSON-LD playground](https://json-ld.org/playground/), although the context IRI must be changed to: `https://raw.githubusercontent.com/bids-standard/BEP028_BIDSprov/master/context.json`
 
 ### `Used` key for activities
 
@@ -94,9 +78,20 @@ Although the BIDS-Prov spec mentions:
 
 We represented used entities in a list to link all the dicom files of a directory to the corresponding conversion activity.
 
+### `Environments` not defined in the context
+
+We cannot use an `Environments` list because the current context (commit ce0eb77) does not define the `Environments` term. Therefore, we defined the `urn:fedora-b7hmkmqd` environments as an `Entity`.
+
 ### High number of dicom files
 
-As there is a high number of dicom files (384 in `acq1/` and 5460 in `acq2/`), we did not create an entity for each of these. Only the first three files of each directory were represented.
+Listing all the DICOM files used by the dcm2niix conversion steps would lower readability of the JSON-LD provenance files. Therefore we only listed the following directories as `Entities`:
+
+```
+bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms
+bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms
+```
+
+although it is not allowed by the current version of the BIDS Prov specification to have directories as `Entities`.
 
 ### `TaskName` not generated
 
