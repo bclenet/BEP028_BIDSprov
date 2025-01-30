@@ -4,6 +4,7 @@
 """ Merge available prov JSON files into one RDF graph """
 
 import json
+from pathlib import Path
 
 # List of available prov files
 prov_soft_files = [
@@ -43,15 +44,22 @@ for prov_file in prov_env_files:
 
 # Parse Sidecar files
 for sidecar_file in sidecar_files:
+	# Identify data file(s) associated with the sidecar
+	sidecar_filename = Path(sidecar_file)
+	data_files = Path('').glob(f'{sidecar_filename.with_suffix("")}.*')
+	data_files = [str(f) for f in list(data_files) if str(sidecar_filename) not in str(f)]
+
+	# Write provenance
 	with open(sidecar_file, encoding = 'utf-8') as file:
 		data = json.load(file)
 		if 'GeneratedBy' in data:
 			activity = data['GeneratedBy']
 			base_provenance['Records']['Activities'].append(activity)
-			base_provenance['Records']['Entities'].append({
-				"Id": f"bids::{sidecar_file}",
-				"GeneratedBy": activity["Id"]
-				})
+			for data_file in data_files:
+				base_provenance['Records']['Entities'].append({
+					"Id": f"bids::{data_file}",
+					"GeneratedBy": activity["Id"]
+					})
 
 # Write jsonld
 with open('prov/merged/prov-dcm2niix.prov.jsonld', 'w', encoding = 'utf-8') as file:
