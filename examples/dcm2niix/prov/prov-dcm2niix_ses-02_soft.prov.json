@@ -1,0 +1,10 @@
+{
+  "bids::prov/dcm2niix-v1.0.20231025": {    
+    "Label": "dcm2niix",
+    "Version": "v1.0.20231025"
+  },
+  "bids::prov/fmriprep-v8.0.5": {    
+    "Label": "fmriprep",
+    "Version": "v8.0.5"
+  }
+}
