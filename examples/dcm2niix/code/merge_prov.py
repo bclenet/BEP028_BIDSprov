@@ -4,7 +4,6 @@
 """ Merge available prov JSON files into one RDF graph """
 
 import json
-from pyld import jsonld
 
 # List of available prov files
 prov_soft_files = [
@@ -55,5 +54,5 @@ for sidecar_file in sidecar_files:
 				})
 
 # Write jsonld
-with open('prov/experiment_1/merged_provenance.prov.jsonld', 'w', encoding = 'utf-8') as file:
+with open('prov/merged/prov-dcm2niix.prov.jsonld', 'w', encoding = 'utf-8') as file:
 	file.write(json.dumps(base_provenance, indent = 2))
