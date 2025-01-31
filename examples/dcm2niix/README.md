@@ -48,7 +48,7 @@ From that, we generate the graph `prov/merged/dcm2niix.prov.jsonld`. Then we wer
 bids_prov_visualizer --input_file prov/merged/dcm2niix.prov.jsonld --output_file prov/merged/dcm2niix.prov.png
 ```
 
-![](/examples/dcm2niix/prov/merged/dicom2niix.prov.png)
+![](/examples/dcm2niix/prov/merged/dcm2niix.prov.png)
 
 ### Notes
 
