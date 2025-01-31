@@ -1,0 +1,69 @@
+{
+  "@context": "https://purl.org/nidash/bidsprov/context.json",
+  "Records": {
+    "Software": [
+      {
+        "Id": "bids::prov/dcm2niix-xce5m9z3",
+        "Label": "dcm2niix",
+        "Version": "v1.0.20220720"
+      }
+    ],
+    "Entities": [
+      {
+        "Id": "bids::prov/fedora-b7hmkmqd",
+        "Label": "Fedora release 36 (Thirty Six)",
+        "OperatingSystem": " GNU/Linux 6.2.15-100.fc36.x86_64"
+      },
+      {
+        "Id": "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms",
+        "Label": "dicoms"
+      },
+      {
+        "Id": "bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.nii",
+        "Label": "sub-02_ses-20130717141500_T1w.nii",
+        "GeneratedBy": "urn:conversion-00f3a18f"
+      },
+      {
+        "Id": "bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.json",
+        "Label": "sub-02_ses-20130717141500_T1w.json",
+        "GeneratedBy": "urn:conversion-00f3a18f"
+      },
+      {
+        "Id": "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms",
+        "Label": "dicoms"
+      },
+      {
+        "Id": "bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.nii",
+        "Label": "sub-02_ses-20140425155335_task-oneback_run-1_bold.nii",
+        "GeneratedBy": "urn:conversion-5a66f5be"
+      },
+      {
+        "Id": "bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.json",
+        "Label": "sub-02_ses-20140425155335_task-oneback_run-1_bold.json",
+        "GeneratedBy": "urn:conversion-5a66f5be"
+      }
+    ],
+    "Activities": [
+      {
+        "Id": "urn:conversion-00f3a18f",
+        "Label": "Conversion",
+        "Command": "dcm2niix -o . -f sub-%i/ses-%t/anat/sub-%i_ses-%t_T1w sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms",
+        "AssociatedWith": "bids::prov/dcm2niix-xce5m9z3",
+        "Used": [
+          "bids::prov/fedora-b7hmkmqd",
+          "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms"
+        ]
+      },
+      {
+        "Id": "urn:conversion-5a66f5be",
+        "Label": "Conversion",
+        "Command": "dcm2niix -o . -f sub-%i/ses-%t/func/sub-%i_ses-%t_task-oneback_run-1_bold sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms",
+        "AssociatedWith": "bids::prov/dcm2niix-xce5m9z3",
+        "Used": [
+          "bids::prov/fedora-b7hmkmqd",
+          "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms"
+        ]
+      }
+    ]
+  }
+}
