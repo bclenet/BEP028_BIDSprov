@@ -9,8 +9,6 @@
     ],
     "Activities": [
       {
-        "Id": "urn:conversion-00f3a18f",
-        "Type": "Activity",
         "Label": "Conversion",
         "Command": "dcm2niix -o . -f sub-%i/ses-%t/anat/sub-%i_ses-%t_T1w sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms",
         "AssociatedWith": "bids::prov/dcm2niix-khhkm7u1",
@@ -21,11 +19,10 @@
             "Type": "Entity",
             "Label": "dicoms"
           }
-        ]
+        ],
+        "Id": "bids::prov/conversion-00f3a18f"
       },
       {
-        "Id": "urn:conversion-5a66f5be",
-        "Type": "Activity",
         "Label": "Conversion",
         "Command": "dcm2niix -o . -f sub-%i/ses-%t/func/sub-%i_ses-%t_task-oneback_run-1_bold sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms",
         "AssociatedWith": "bids::prov/dcm2niix-khhkm7u1",
@@ -36,7 +33,8 @@
             "Type": "Entity",
             "Label": "dicoms"
           }
-        ]
+        ],
+        "Id": "bids::prov/conversion-5a66f5be"
       }
     ],
     "Entities": [
@@ -47,11 +45,11 @@
       },
       {
         "Id": "bids::sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.nii",
-        "GeneratedBy": "urn:conversion-00f3a18f"
+        "GeneratedBy": "bids::prov/conversion-00f3a18f"
       },
       {
         "Id": "bids::sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.nii",
-        "GeneratedBy": "urn:conversion-5a66f5be"
+        "GeneratedBy": "bids::prov/conversion-5a66f5be"
       }
     ]
   },

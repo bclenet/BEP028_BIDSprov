@@ -39,18 +39,19 @@ as follows:
 
 ## New features for BIDS / BIDS Prov
 
-We introduce the following BIDS suffixes that are currently not existing:
-* `soft`: the file describes BIDS Prov `Software` for the provenance traces
-* `env`: the file describes BIDS Prov `Environments` for the provenance traces
-* `base`: the file describes common BIDS Prov parameters for the provenance traces (version and context for BIDS Prov)
-
 We introduce the following BIDS entity that is currently not existing:
 * `prov`
     * Full name: Provenance traces
     * Format: `prov-<label>`
     * Definition: A grouping of provenance traces. Defining multiple provenance traces groups is appropriate when several processings have been performed on data.
 
-We use the `GeneratedBy` field of JSON sidecars to describe `Activities` that created the file the sidecars refers to.
+We introduce the following BIDS suffixes that are currently not existing:
+* `act`: the file describes BIDS Prov `Activities` for the group of provenance traces
+* `soft`: the file describes BIDS Prov `Software` for the group of provenance traces
+* `env`: the file describes BIDS Prov `Environments` for the group of provenance traces
+* `base`: the file describes common BIDS Prov parameters for the group of provenance traces (version and context for BIDS Prov)
+
+We use the `GeneratedBy` field of JSON sidecars to link to `Activities` that created the file the sidecars refers to.
 
 ## Merging JSON in a JSON-LD file and plotting graph
 

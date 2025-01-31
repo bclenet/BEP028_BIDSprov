@@ -13,6 +13,9 @@ prov_soft_files = [
 prov_env_files = [
 	'prov/prov-dcm2niix_env.prov.json'
 ]
+prov_act_files = [
+	'prov/prov-dcm2niix_act.prov.json'
+]
 sidecar_files = [
 	'sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.json',
 	'sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.json'
@@ -49,6 +52,14 @@ for prov_file in prov_env_files:
 		 	# the Environments term is not defined in the BIDS Prov context yet
 			base_provenance['Records']['Entities'].append(value)
 
+# Parse Activities
+for prov_file in prov_act_files:
+	with open(prov_file, encoding = 'utf-8') as file:
+		data = json.load(file)
+		for key, value in data.items():
+			value['Id'] = key
+			base_provenance['Records']['Activities'].append(value)
+
 # Parse Sidecar files
 for sidecar_file in sidecar_files:
 	# Identify data file(s) associated with the sidecar
@@ -60,12 +71,11 @@ for sidecar_file in sidecar_files:
 	with open(sidecar_file, encoding = 'utf-8') as file:
 		data = json.load(file)
 		if 'GeneratedBy' in data:
-			activity = data['GeneratedBy']
-			base_provenance['Records']['Activities'].append(activity)
+			activity_id = data['GeneratedBy']
 			for data_file in data_files:
 				base_provenance['Records']['Entities'].append({
 					"Id": f"bids::{data_file}",
-					"GeneratedBy": activity["Id"]
+					"GeneratedBy": activity_id
 					})
 
 # Write jsonld
