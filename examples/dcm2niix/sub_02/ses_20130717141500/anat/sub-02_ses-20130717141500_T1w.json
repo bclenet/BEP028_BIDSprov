@@ -25,13 +25,13 @@
       "Type": "Activity",
       "Label": "Conversion",
       "Command": "dcm2niix -o . -f sub-%i/ses-%t/anat/sub-%i_ses-%t_T1w sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms",
-      "AssociatedWith": "bids::prov/dcm2niix-v1.0.20220720",
+      "AssociatedWith": "bids::prov/dcm2niix-khhkm7u1",
       "Used": [
-        "bids::prov/fedora-35",
+        "bids::prov/fedora-uldfv058",
         {
           "Id": "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms",
           "Type": "Entity",
-          "Label": "Structural MRI DICOMs"
+          "Label": "dicoms"
         }
       ]
     }

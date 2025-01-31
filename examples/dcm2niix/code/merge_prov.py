@@ -8,12 +8,10 @@ from pathlib import Path
 
 # List of available prov files
 prov_soft_files = [
-	'prov/prov-dcm2niix_ses-01_soft.prov.json',
-	'prov/prov-dcm2niix_ses-02_soft.prov.json'
+	'prov/prov-dcm2niix_soft.prov.json'
 ]
 prov_env_files = [
-	'prov/prov-dcm2niix_ses-01_env.prov.json',
-	'prov/prov-dcm2niix_ses-02_env.prov.json'
+	'prov/prov-dcm2niix_env.prov.json'
 ]
 sidecar_files = [
 	'sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.json',
@@ -21,8 +19,17 @@ sidecar_files = [
 ]
 
 # Base jsonld
-with open('prov/base.prov.jsonld', encoding = 'utf-8') as file:
-	base_provenance = json.load(file)
+base_provenance = {
+  "Records": {
+    "Software": [],
+    "Activities": [],
+    "Entities": []
+  }
+}
+
+# Add context and version
+with open('prov/prov-dcm2niix_base.prov.json', encoding = 'utf-8') as file:
+	base_provenance.update(json.load(file))
 
 # Parse Software
 for prov_file in prov_soft_files:

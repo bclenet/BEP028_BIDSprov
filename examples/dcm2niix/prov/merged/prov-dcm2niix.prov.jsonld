@@ -1,27 +1,10 @@
 {
-  "@context": "https://purl.org/nidash/bidsprov/context.json",
-  "BIDSProvVersion": "0.0.1",
   "Records": {
     "Software": [
       {
         "Label": "dcm2niix",
         "Version": "v1.0.20220720",
-        "Id": "bids::prov/dcm2niix-v1.0.20220720"
-      },
-      {
-        "Label": "fmriprep",
-        "Version": "v8.0.5",
-        "Id": "bids::prov/fmriprep-v8.0.5"
-      },
-      {
-        "Label": "dcm2niix",
-        "Version": "v1.0.20231025",
-        "Id": "bids::prov/dcm2niix-v1.0.20231025"
-      },
-      {
-        "Label": "fmriprep",
-        "Version": "v8.0.5",
-        "Id": "bids::prov/fmriprep-v8.0.5"
+        "Id": "bids::prov/dcm2niix-khhkm7u1"
       }
     ],
     "Activities": [
@@ -30,13 +13,13 @@
         "Type": "Activity",
         "Label": "Conversion",
         "Command": "dcm2niix -o . -f sub-%i/ses-%t/anat/sub-%i_ses-%t_T1w sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms",
-        "AssociatedWith": "bids::prov/dcm2niix-v1.0.20220720",
+        "AssociatedWith": "bids::prov/dcm2niix-khhkm7u1",
         "Used": [
-          "bids::prov/fedora-35",
+          "bids::prov/fedora-uldfv058",
           {
             "Id": "bids::sourcedata/hirni-demo/acq1/dicoms/example-dicom-structural-master/dicoms",
             "Type": "Entity",
-            "Label": "Structural MRI DICOMs"
+            "Label": "dicoms"
           }
         ]
       },
@@ -45,26 +28,22 @@
         "Type": "Activity",
         "Label": "Conversion",
         "Command": "dcm2niix -o . -f sub-%i/ses-%t/func/sub-%i_ses-%t_task-oneback_run-1_bold sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms",
-        "AssociatedWith": "bids::prov/dcm2niix-v1.0.20231025",
+        "AssociatedWith": "bids::prov/dcm2niix-khhkm7u1",
         "Used": [
-          "bids::prov/fedora-36",
+          "bids::prov/fedora-uldfv058",
           {
             "Id": "bids::sourcedata/hirni-demo/acq2/dicoms/example-dicom-functional-master/dicoms",
             "Type": "Entity",
-            "Label": "Functional MRI DICOMs"
+            "Label": "dicoms"
           }
         ]
       }
     ],
     "Entities": [
       {
-        "Label": "Fedora release 35 (Thirty Five)",
-        "Id": "bids::prov/fedora-35"
-      },
-      {
         "Label": "Fedora release 36 (Thirty Six)",
         "OperatingSystem": "GNU/Linux 6.2.15-100.fc36.x86_64",
-        "Id": "bids::prov/fedora-36"
+        "Id": "bids::prov/fedora-uldfv058"
       },
       {
         "Id": "bids::sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.nii",
@@ -75,5 +54,7 @@
         "GeneratedBy": "urn:conversion-5a66f5be"
       }
     ]
-  }
+  },
+  "@context": "https://purl.org/nidash/bidsprov/context.json",
+  "BIDSProvVersion": "0.0.1"
 }
