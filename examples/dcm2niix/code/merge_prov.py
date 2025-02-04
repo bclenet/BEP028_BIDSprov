@@ -17,8 +17,8 @@ prov_act_files = [
 	'prov/prov-dcm2niix_act.prov.json'
 ]
 sidecar_files = [
-	'sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.json',
-	'sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.json'
+	'sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.json',
+	'sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.json'
 ]
 
 # Base jsonld

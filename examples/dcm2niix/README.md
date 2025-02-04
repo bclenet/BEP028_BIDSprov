@@ -29,11 +29,11 @@ as follows:
 │   ├── prov-dcm2niix_base.prov.json
 │   ├── prov-dcm2niix_env.prov.json
 │   └── prov-dcm2niix_soft.prov.json
-└── sub_02
-    ├── ses_20130717141500
+└── sub-02
+    ├── ses-20130717141500
     │   └── anat
     │       └── sub-02_ses-20130717141500_T1w.json
-    └── ses_20140425155335
+    └── ses-20140425155335
         └── func
             └── sub-02_ses-20140425155335_task-oneback_run-1_bold.json
 ```

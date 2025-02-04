@@ -44,11 +44,11 @@
         "Id": "bids::prov/fedora-uldfv058"
       },
       {
-        "Id": "bids::sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.nii",
+        "Id": "bids::sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.nii",
         "GeneratedBy": "bids::prov/conversion-00f3a18f"
       },
       {
-        "Id": "bids::sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.nii",
+        "Id": "bids::sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.nii",
         "GeneratedBy": "bids::prov/conversion-5a66f5be"
       }
     ]
