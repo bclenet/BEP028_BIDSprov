@@ -10,8 +10,8 @@ from bids_prov.visualize import join_jsonld
 prov_files = [
 	'prov/software.prov.jsonld',
 	'prov/environments.prov.jsonld',
-	'sub_02/ses_20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.jsonld',
-	'sub_02/ses_20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld'
+	'sub-02/ses-20130717141500/anat/sub-02_ses-20130717141500_T1w.prov.jsonld',
+	'sub-02/ses-20140425155335/func/sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld'
 ]
 
 # Generate JSON-LD graph of each file using pyld

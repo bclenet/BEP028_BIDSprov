@@ -21,11 +21,11 @@ The aim of the example is to describe the provenance records inside several file
 ├── prov
 │   ├── environments.prov.jsonld
 │   └── software.prov.jsonld
-└── sub_02
-    ├── ses_20130717141500
+└── sub-02
+    ├── ses-20130717141500
     │   └── anat
     │       └── sub-02_ses-20130717141500_T1w.prov.jsonld
-    └── ses_20140425155335
+    └── ses-20140425155335
         └── func
             └── sub-02_ses-20140425155335_task-oneback_run-1_bold.prov.jsonld
 ```
