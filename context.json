@@ -1,19 +1,22 @@
 {
     "@context": {
-        "@version": 1.1, 
+        "@version": 1.1,
         "Records": {
-          "@container": "@type", 
+          "@container": "@type",
           "@id": "@graph"
-        }, 
+        },
         "prov" : "http://www.w3.org/ns/prov#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "RRID": "http://scicrunch.org/resolver/",     
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "spdx": "http://spdx.org/rdf/terms#",
+        "RRID": "http://scicrunch.org/resolver/",
         "Id": "@id",
         "Type": "@type",
-        "Label": "http://www.w3.org/2000/01/rdf-schema#label",
+        "Label": "rdfs:label",
+        "Description": "rdfs:comment",
         "StartedAtTime" : {
           "@id": "prov:startedAtTime",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "EndedAtTime" : {
           "@id": "prov:endedAtTime",
@@ -35,15 +38,27 @@
           "@id": "prov:wasInformedBy",
           "@type": "@id"
         },
+        "DerivedFrom" : {
+          "@id": "prov:wasDerivedFrom",
+          "@type": "@id"
+        },
         "Used" : {
           "@id": "prov:used",
           "@type": "@id"
         },
-        "Entities": "prov:Entity",
-        "Entity": "prov:Entity",
+        "ActedOnBehalfOf" : {
+          "@id": "prov:actedOnBehalfOf",
+          "@type": "@id"
+        },
+        "Files": "prov:Entity",
+        "Datasets": "prov:Collection",
+        "Environments": "prov:Entity",
         "Activities": "prov:Activity",
         "Activity": "prov:Activity",
         "Software": "prov:Agent",
-        "Atlocation": "prov:atLocation"
+        "Atlocation": "prov:atLocation",
+        "Checksum": "spdx:Checksum",
+        "ChecksumAlgorithm": "spdx:ChecksumAlgorithm",
+        "ChecksumValue": "spdx:ChecksumValue"
     }
 }
