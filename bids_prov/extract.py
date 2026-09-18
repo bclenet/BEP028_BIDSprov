@@ -1,51 +1,62 @@
-# Search for all nodes linked to a prov:Entity
+#!/usr/bin/python
+# coding: utf-8
 
-"""
-https://stackoverflow.com/questions/37186530/how-do-i-construct-get-the-whole-sub-graph-from-a-given-resource-in-rdf-graph
-This works because every property is either x: or not, so x:|!x: matches every property,
-and then (x:|!x:)* is an arbitrary length path, including paths of length zero,
-which means that ?s will be bound to everything reachable from :a, including :a itself.
-Then you're grabbing the triples where ?s is the subject.
-When you construct the graph of all those triples, you get the subgraph connected to :a.
-"""
+""" Generate a subgraph with elements connected to a given node. """
 
 import json
 from io import StringIO
 
 from pyld import jsonld
 
-from rdflib import Dataset, ConjunctiveGraph
+from rdflib import Dataset
 from rdflib.plugins.sparql import prepareQuery
 
-with open("example.jsonld", "r") as f:
-    base_provenance = json.load(f)
+""" Extract the subgraph corresponding to all nodes connected to a given node.
+    This was design for prov:Entity as starting node, to show the whole process
+    that was needed to generate this prov:Entity.
+ """
 
-graph = Dataset()
-graph.parse(StringIO(json.dumps(jsonld.expand(base_provenance))), format='json-ld')
+def entry_point(input_file: str, node_id: str, output_file: str) -> None:
+    """ Search for all nodes linked to a prov:Entity """
 
-file_name = "bids::sub-01/anat/c2sub-01_T1w.nii"
-file_name = "bids::sub-01/func/sub-01_task-tonecounting_bold.nii"
+    # Open and read input file
+    with open(input_file, 'r', encoding='utf-8') as file:
+        base_provenance = json.load(file)
 
-query = prepareQuery(f"""
-    CONSTRUCT {{ ?s ?p ?o }} WHERE {{
-        <{file_name}> (<>|!<>)* ?s .
-        ?s ?p ?o .
-        }}
+    # Input data as a RDF graph
+    graph = Dataset()
+    graph.parse(StringIO(json.dumps(jsonld.expand(base_provenance))), format='json-ld')
+
+    # Query to construct the sub graph
     """
-    )
+    Source: https://stackoverflow.com/questions/37186530/how-do-i-construct-get-the-whole-sub-graph-from-a-given-resource-in-rdf-graph
 
-output_graph = ConjunctiveGraph()
-for triple in graph.query(query):
-    output_graph.add(triple)
+    This works because every property is either <> or not, so <>|!<> matches every property,
+    and then (<>|!<>)* is an arbitrary length path, including paths of length zero,
+    which means that ?s will be bound to everything reachable from :a, including :a itself.
+    Then you're grabbing the triples where ?s is the subject.
+    When you construct the graph of all those triples, you get the subgraph connected to :a.
+    """
+    query = prepareQuery(f"""
+        CONSTRUCT {{ ?s ?p ?o }} WHERE {{
+            <{node_id}> (<>|!<>)* ?s .
+            ?s ?p ?o .
+            }}
+        """
+        )
 
-import bids_prov.visualize
-bids_prov.visualize.viz_turtle(output_graph.serialize(format="turtle"), "test.png")
+    # List of Ids to keep as they are connected to the starting node
+    connected_nodes = [s.n3(graph.namespace_manager).replace('<', '').replace('>', '')
+        for s, _, _ in graph.query(query)]
 
+    # Exclude objects that are not connected nodes
+    for key in base_provenance['Records'].keys():
+        objects = []
+        for node in base_provenance['Records'][key]:
+            if node['Id'] in connected_nodes:
+                objects.append(node)
+        base_provenance['Records'][key] = objects
 
-print(json.dumps(output_graph.serialize(format="json-ld"), indent=4))
-
-
-"""
-g.parse(data=output, format="json-ld")
-g.parse(data=output, format="json-ld")
-"""
+    # Write output file
+    with open(output_file, 'w', encoding='utf-8') as file:
+        file.write(json.dumps(base_provenance, indent=4))

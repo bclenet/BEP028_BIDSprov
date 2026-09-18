@@ -19,7 +19,7 @@ def entry_point():
         help='One of these subcommands is required.', required=True)
 
     # Parser for the merge command
-    parser_merge = subparsers.add_parser('merge', aliases=['m'],
+    parser_merge = subparsers.add_parser('merge',
         help='Merge all provenance metadata from a BIDS dataset into one JSON-LD file.')
     parser_merge.add_argument('--dataset', '-d', type=str, default='.',
         help='The path to the input BIDS dataset. Do not provide this argument if the\
@@ -29,10 +29,10 @@ def entry_point():
     parser_merge.add_argument('--output_file', '-o', type=str, required=True,
         help='Name for the output JSON-LD file containing the provenance graph for the input dataset.')
     parser_merge.add_argument('--entity', '-e', type=str,
-        help='`prov-` entity for which to extract the metadata.')
+        help='`prov-` BIDS entity for which to extract the metadata. E.g.: for `prov-spm`, provide "-e spm"')
 
     # Parser for the extract command
-    parser_extract = subparsers.add_parser('extract', aliases=['e', 'ext'],
+    parser_extract = subparsers.add_parser('extract',
         help='Generate the subgraph containing ancestors to a given node.')
     parser_extract.add_argument('--input_file', '-i', type=str, required=True,
         help='Complete graph as a JSON-LD file.')
@@ -42,7 +42,7 @@ def entry_point():
         help='Name for the output JSON-LD file containing the subgraph.')
 
     # Parser for the visualize command
-    parser_visualize = subparsers.add_parser('visualize', aliases=['v', 'vis'],
+    parser_visualize = subparsers.add_parser('visualize',
         help='Generate a `graphviz` graph as PNG file from BIDS-Prov data in a JSON-LD file')
     parser_visualize.add_argument('--input_file', '-i', type=str, required=True,
         help='Input BIDS-Prov data as a JSON-LD file.')
