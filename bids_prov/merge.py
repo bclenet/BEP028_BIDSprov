@@ -273,28 +273,17 @@ def merge_records(layout: BIDSLayout, group: str = None) -> dict:
 
     return base_provenance
 
-def entry_point():
-    """ A command line tool for the merge module """
-
-    parser = ArgumentParser()
-    parser.add_argument('--dataset', '-d', type=str, default='.',
-        help='The path to the input BIDS dataset.')
-    parser.add_argument('--derivative', action='store_true',
-        help='Set this option to specify the dataset is a BIDS derivative dataset.')
-    parser.add_argument('--output_file', '-o', type=str, required=True,
-        help='Output JSON-LD file containing the provenance graph for the input dataset.')
-    parser.add_argument('--group', '-g', type=str,
-        help='Provenance group for which to extract the metadata.')
-    arguments = parser.parse_args()
+def entry_point(dataset: str, derivative: bool, output_file: str, entity: str):
+    """ Merge all provenance metadata from a BIDS dataset into one JSON-LD file. """
 
     # Write output JSON-LD file
-    with open(arguments.output_file, 'w', encoding = 'utf-8') as file:
+    with open(output_file, 'w', encoding = 'utf-8') as file:
         file.write(
-            json.dumps(merge_records(
-                BIDSLayout(arguments.dataset, is_derivative=arguments.derivative),
-                arguments.group
-                ), indent = 2)
+            json.dumps(
+                merge_records(
+                    BIDSLayout(dataset, is_derivative=derivative),
+                    entity
+                ),
+                indent = 2
+            )
         )
-
-if __name__ == '__main__':
-    entry_point()

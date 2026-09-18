@@ -22,6 +22,7 @@ OPTIONAL_FIELDS = {'Activity': ("startedAtTime", "endedAtTime"),
 
 
 def viz_turtle(content=None, img_file=None, source=None, **kwargs) -> None:
+    """ Write png graph visualization from RDF turtle graph content """
 
     prov_doc = ProvDocument.deserialize(
         content=content, format="rdf", rdf_format="turtle", source=source)
@@ -94,7 +95,9 @@ def join_jsonld(lds: list, graph_key="Records", omit_details=True) -> dict:
     return payload
 
 
-def main(filename: str, output_file=None, omit_details=True) -> None:
+def entry_point(filename: str, output_file=None, omit_details=True) -> None:
+    """ Entry point to convert jsonld to png graph visualization """
+
     jsonld11s = list()
     with open(filename) as fd:
         ld = json.load(fd)
@@ -109,17 +112,3 @@ def main(filename: str, output_file=None, omit_details=True) -> None:
         output_file = (os.path.splitext(filename)[0] + ".png")
 
     viz_jsonld11(jsonld11, output_file)
-
-
-def entry_point():
-    """ A command line tool for the visualize module """
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--input_file", type=str, help="input BIDSprov data as a .jsonld file ", required=True)
-    parser.add_argument("--output_file", type=str, default="output_graph.png", help="output .png file showing BIDSprov graph")
-    opt = parser.parse_args()
-
-    main(opt.input_file, output_file=opt.output_file, omit_details=True)
-    # >> python -m   bids_prov.visualize --input_file ./res_temp.jsonld  --output_file res.png
-
-if __name__ == "__main__":
-    entry_point()
