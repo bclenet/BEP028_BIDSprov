@@ -46,8 +46,11 @@ def entry_point():
         help='Generate a `graphviz` graph as PNG file from BIDS-Prov data in a JSON-LD file')
     parser_visualize.add_argument('--input_file', '-i', type=str, required=True,
         help='Input BIDS-Prov data as a JSON-LD file.')
-    parser_visualize.add_argument('--output_file', '-o', type=str, required=True,
-        help='Name for the output PNG file showing the `graphviz` graph.')
+    parser_visualize.add_argument('--output_file', '-o', type=str,
+        help='Name for the output PNG file showing the `graphviz` graph.\
+        If not provided, the input name stem will be used for the output file name.')
+    parser_visualize.add_argument('--detailed', '-d', action='store_true',
+        help='Set this option to write a detailed version of the graph.')
 
     # Parse command line and lauch corresponding programs
     args = parser.parse_args()
@@ -57,6 +60,6 @@ def entry_point():
         case 'extract':
             extract(args.input_file, args.node_id, args.output_file)
         case 'visualize':
-            visualize(args.input_file, args.output_file)
+            visualize(args.input_file, args.output_file, args.detailed)
         case _:
             return
